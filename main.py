@@ -1,3 +1,5 @@
+""" This is a race gaming code called seasons united, this game was made by Juliana silva costa."""
+
 import pygame
 import sys
 from Cutscenes import *
@@ -6,6 +8,7 @@ import time
 import random
 from pygame.locals import *
 
+#Varibles
 pygame.init()
 screen_width = 1080
 screen_height = 720
@@ -72,7 +75,6 @@ class Player(pygame.sprite.Sprite):
             self.freeze_timer -= 1
             if self.freeze_timer == 0:
                 # Unfreeze the player
-                # Add any additional logic here
                 print("Player unfrozen!")
 
         if cut_scene_manager.cut_scene is None and self.freeze_timer <= 0:
@@ -104,7 +106,7 @@ def draw_start_button():
 def handle_button_click():
     global start_button_clicked
     start_button_clicked = True
-    # Add your desired logic to execute when the button is clicked
+    #  logic to execute when the button is clicked
     print("Start button clicked!")
     countdown()
 
@@ -116,7 +118,7 @@ def countdown():
         screen.fill((0, 0, 0))
         text = font.render(str(i), True, (255, 255, 255))
         text_rect = text.get_rect(center=(screen_width // 2, screen_height // 2))
-        screen.blit(text, text_rect)
+        screen.blit(text, text_rect) #display the countdown text
         pygame.display.flip()
         time.sleep(1)
 
@@ -165,7 +167,7 @@ class IceBlock(pygame.sprite.Sprite):
 # Create player, cut scene manager, and ice blocks
 player = Player()
 cut_scene_manager = CutSceneManager(screen)
-num_ice_blocks = 4  # Set the desired number of ice blocks
+num_ice_blocks = 4  # Set the choosen number of ice blocks
 ice_blocks = pygame.sprite.Group()
 
 for _ in range(num_ice_blocks):
@@ -183,9 +185,6 @@ counter = 0
 current_time = 0
 button_press_time = 0
 
-# Set ground level
-ground_level_min = 550
-ground_level_max = 700
 
 # Game loop
 while True:
