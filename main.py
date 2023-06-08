@@ -1,4 +1,4 @@
-""" This is a race gaming code called seasons united, this game was made by Juliana silva costa."""
+""" This is a race game code called seasons united, the point is that there are diffrent maps and sports in the game, and you can race to the end of the map  to win with the fastest time possible this game was made by Juliana silva costa."""
 
 import pygame
 import sys
